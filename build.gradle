@@ -10,6 +10,10 @@ buildscript {
         maven {
             url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
         }
+        maven {
+            url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/"
+        }
+        maven { url "https://raw.github.com/bmob/bmob-android-sdk/master"}
     }
     dependencies {
 
