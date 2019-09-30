@@ -1,12 +1,13 @@
 package com.lingjuan.app.utils;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.text.TextUtils;
-import android.widget.TextView;
 
 import com.lingjuan.app.constant.Constant;
 import com.lingjuan.app.entity.PurchaseRzy;
@@ -103,8 +104,15 @@ public class ActivityUtils {
             return false;
         }
         try {
-            ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
-                    PackageManager.GET_UNINSTALLED_PACKAGES);
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+                // fallback
+                ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
+                        PackageManager.GET_UNINSTALLED_PACKAGES);
+            } else {
+                // use your api
+                ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
+                        PackageManager.MATCH_UNINSTALLED_PACKAGES);
+            }
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;

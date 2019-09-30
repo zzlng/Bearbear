@@ -126,7 +126,7 @@ public class CustomDialog extends Dialog {
             final CustomDialog dialog = new CustomDialog(context, R.style.Dialog_FS);
             View layout = inflater.inflate(R.layout.dialog_normal_layout, null);
             dialog.addContentView(layout, new LayoutParams(
-                    LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+                    LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             // set the dialog title
             ((TextView) layout.findViewById(R.id.title)).setText(title);
             // set the confirm button
@@ -170,8 +170,8 @@ public class CustomDialog extends Dialog {
                         .removeAllViews();
                 ((LinearLayout) layout.findViewById(R.id.content)).addView(
                         contentView, new LayoutParams(
-                                LayoutParams.FILL_PARENT,
-                                LayoutParams.FILL_PARENT));
+                                LayoutParams.MATCH_PARENT,
+                                LayoutParams.MATCH_PARENT));
             }
             dialog.setContentView(layout);
             return dialog;

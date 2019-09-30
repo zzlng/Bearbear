@@ -2,6 +2,7 @@ package com.lingjuan.app.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -25,7 +26,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayout());
         ButterKnife.bind(this);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        StatusBarUtil.setTranslucentForImageView(this, getResources().getColor(R.color.colorPrimary),null);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            // fallback
+            StatusBarUtil.setTranslucentForImageView(this, getResources().getColor(R.color.colorPrimary),null);
+        } else {
+            // use your api
+            StatusBarUtil.setTranslucentForImageView(this, getColor(R.color.colorPrimary),null);
+        }
         loadBuilder=new LoadingDailog.Builder(this)
                 .setCancelable(false)
                 .setMessage("加载中...")

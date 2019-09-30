@@ -34,7 +34,9 @@ public class ClassCkAdpater extends BaseQuickAdapter<SupclassLeft.GeneralClassif
     protected void convert(BaseViewHolder helper, SupclassLeft.GeneralClassifyBean.DataBean.InfoBean item) {
         helper.setVisible(R.id.erjiName,true);
         helper.setText(R.id.erjiName,String.valueOf(item.getSon_name()));
-        helper.setOnClickListener(R.id.baceonclcik,(v) -> ActivityUtils.goActivity(item.getSon_name(),"content","type", context, ProductActivity.class));
+//        helper.setOnClickListener(R.id.baceonclcik,(v) -> ActivityUtils.goActivity(item.getSon_name(),"content","type", context, ProductActivity.class));
+//        helper.itemView.setOnClickListener((v) -> ActivityUtils.goActivity(item.getSon_name(),"content","type", context, ProductActivity.class));
+        helper.getView(R.id.baceonclcik).setOnClickListener((v) -> ActivityUtils.goActivity(item.getSon_name(),"content","type", context, ProductActivity.class));
         PicassomageUtils.loadSzie(context,item.getImgurl(),helper.getView(R.id.imageId),300);
     }
 

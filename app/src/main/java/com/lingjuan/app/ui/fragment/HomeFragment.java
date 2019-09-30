@@ -1,12 +1,12 @@
 package com.lingjuan.app.ui.fragment;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.FileProvider;
+import android.support.v4.widget.ContentLoadingProgressBar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -106,7 +106,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     //升级弹窗
     private UpgradeDialog upgradeDialog;
     //进度条 后期改
-    private ProgressDialog progressDialog;
+//    private ProgressDialog progressDialog;
+    private ContentLoadingProgressBar progressBar;
     //九宫格点击
     private GridLayoutAdapter gridLayoutAdapter;
     //九宫格数据
@@ -338,7 +339,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     public void downLoading(int i) {
-        Objects.requireNonNull(getActivity()).runOnUiThread(() -> progressDialog.setProgress(i));
+//        Objects.requireNonNull(getActivity()).runOnUiThread(() -> progressDialog.setProgress(i));
+        Objects.requireNonNull(getActivity()).runOnUiThread(() -> progressBar.setProgress(i));
     }
 
     @Override
@@ -367,13 +369,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     public void setMax(int l) {
         getActivity().runOnUiThread(() -> {
             upgradeDialog.dismiss();
-            progressDialog = new ProgressDialog(getContext());
+            /*progressDialog = new ProgressDialog(getContext());
             progressDialog.setTitle("正在下载中");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             progressDialog.setCancelable(false);
             progressDialog.setMax(l);
-            progressDialog.show();
+            progressDialog.show();*/
+            progressBar = new ContentLoadingProgressBar(getContext());
+            progressBar.onAttachedToWindow();
+            progressBar.setMax(l);
+            progressBar.show();
         });
     }
 

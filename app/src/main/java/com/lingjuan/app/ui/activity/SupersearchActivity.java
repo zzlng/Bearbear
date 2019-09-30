@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -162,7 +163,13 @@ public class SupersearchActivity extends BaseActivity implements IhotKey.P {
             tv.setText(dataBean.get(i).getKeyword());
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             tv.setPadding(30, 10, 30, 10);
-            tv.setBackground(getResources().getDrawable(R.drawable.shape_corner));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                // fallback
+                tv.setBackground(getResources().getDrawable(R.drawable.shape_corner));
+            } else {
+                // use your api
+                tv.setBackground(getDrawable(R.drawable.shape_corner));
+            }
             GradientDrawable gradientDrawable = (GradientDrawable) tv.getBackground();
             gradientDrawable.setColor(Color.parseColor(ColorUtil.statisticsColors[i]));
             tv.setOnClickListener(v -> {
@@ -193,8 +200,15 @@ public class SupersearchActivity extends BaseActivity implements IhotKey.P {
             tv.setText(historyRzyList.get(i).getMessage());
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             tv.setPadding(30, 10, 30, 10);
-            tv.setBackground(getResources().getDrawable(R.drawable.shape_corner));
-            tv.setTextColor(getResources().getColor(R.color.bgColor_overlay));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                // fallback
+                tv.setBackground(getResources().getDrawable(R.drawable.shape_corner));
+                tv.setTextColor(getResources().getColor(R.color.bgColor_overlay));
+            } else {
+                // use your api
+                tv.setBackground(getDrawable(R.drawable.shape_corner));
+                tv.setTextColor(getColor(R.color.bgColor_overlay));
+            }
             tv.setOnClickListener(v -> {
                 if (QueryHistoryUtils.isExistence(tv.getText().toString())) {
                     HistoryRzy historyRzy = new HistoryRzy();

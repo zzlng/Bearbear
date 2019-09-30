@@ -1,6 +1,7 @@
 package com.lingjuan.app.ui.activity;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -150,15 +151,25 @@ public class FunctionalCommodityActivity extends BaseActivity implements Functio
             case R.id.title_view:
                 break;
             case R.id.tv_zonghe:
-                tvZonghe.setTextColor(getResources().getColor(R.color.color_sososu_red));
-                tvXiaoliang.setTextColor(getResources().getColor(R.color.bg_fgs));
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                    tvZonghe.setTextColor(getResources().getColor(R.color.color_sososu_red));
+                    tvXiaoliang.setTextColor(getResources().getColor(R.color.bg_fgs));
+                } else {
+                    tvZonghe.setTextColor(getColor(R.color.color_sososu_red));
+                    tvXiaoliang.setTextColor(getColor(R.color.bg_fgs));
+                }
                 mid = 1;
                 sort = 1;
                 getData();
                 break;
             case R.id.tv_xiaoliang:
-                tvXiaoliang.setTextColor(getResources().getColor(R.color.color_sososu_red));
-                tvZonghe.setTextColor(getResources().getColor(R.color.bg_fgs));
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                    tvXiaoliang.setTextColor(getResources().getColor(R.color.color_sososu_red));
+                    tvZonghe.setTextColor(getResources().getColor(R.color.bg_fgs));
+                } else {
+                    tvXiaoliang.setTextColor(getColor(R.color.color_sososu_red));
+                    tvZonghe.setTextColor(getColor(R.color.bg_fgs));
+                }
                 mid = 1;
                 sort = 3;
                 getData();

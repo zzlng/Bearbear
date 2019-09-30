@@ -2,6 +2,7 @@ package com.lingjuan.app.wigth;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -123,10 +124,22 @@ public class SearchPopupWindow extends PopupWindow {
             helper.addOnClickListener(R.id.baselayouts);
             if (item.isaBoolean()) {
                 helper.setVisible(R.id.imageHong, true);
-                helper.setTextColor(R.id.tv_title, context.getResources().getColor(R.color.hongdui));
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                    // fallback
+                    helper.setTextColor(R.id.tv_title, context.getResources().getColor(R.color.hongdui));
+                } else {
+                    // use your api
+                    helper.setTextColor(R.id.tv_title, context.getColor(R.color.hongdui));
+                }
             } else {
                 helper.setVisible(R.id.imageHong, false);
-                helper.setTextColor(R.id.tv_title, context.getResources().getColor(R.color.font_1f));
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                    // fallback
+                    helper.setTextColor(R.id.tv_title, context.getResources().getColor(R.color.font_1f));
+                } else {
+                    // use your api
+                    helper.setTextColor(R.id.tv_title, context.getColor(R.color.font_1f));
+                }
             }
         }
     }

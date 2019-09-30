@@ -49,14 +49,25 @@ public class VideoTpAdapter extends BaseQuickAdapter<WelldoneVideo.DataBean, Bas
         userPlayer.setPlayUri(Constant.VIDEO_URL + item.getVideoid()+".mp4");
         videoPlayerView.showFullscreenTempView(View.GONE);
         userPlayer.setTag(helper.getAdapterPosition());
-        helper.setOnClickListener(R.id.line1, view -> {
+        /*helper.setOnClickListener(R.id.line1, view -> {
+            helper.setVisible(R.id.line1,false);
+            videoPlayerView.setTitle(item.getItemshorttitle());
+            userPlayer.startPlayer();
+            click.onStopVideo(userPlayer);
+        });*/
+        helper.getView(R.id.line1).setOnClickListener(view -> {
             helper.setVisible(R.id.line1,false);
             videoPlayerView.setTitle(item.getItemshorttitle());
             userPlayer.startPlayer();
             click.onStopVideo(userPlayer);
         });
         helper.setVisible(R.id.line1,true);
-        helper.setOnClickListener(R.id.dianjiview,(v) ->{
+        /*helper.setOnClickListener(R.id.dianjiview,(v) ->{
+            click.OnClickListener(helper.getAdapterPosition());
+            userPlayer.reset();
+            helper.setVisible(R.id.line1,true);
+        });*/
+        helper.getView(R.id.line1).setOnClickListener((v) ->{
             click.OnClickListener(helper.getAdapterPosition());
             userPlayer.reset();
             helper.setVisible(R.id.line1,true);

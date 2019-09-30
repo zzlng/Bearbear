@@ -2,10 +2,10 @@ package com.lingjuan.app.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
-import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -38,7 +38,13 @@ public class DrawActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StatusBarUtil.setTranslucentForImageView(this, getResources().getColor(R.color.error_color_material_dark), null);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            // fallback
+            StatusBarUtil.setTranslucentForImageView(this, getResources().getColor(R.color.error_color_material_dark), null);
+        } else {
+            // use your api
+            StatusBarUtil.setTranslucentForImageView(this, getColor(R.color.error_color_material_dark), null);
+        }
         setContentView(R.layout.activity_draw);
         ButterKnife.bind(this);
         initView();

@@ -3,6 +3,7 @@ package com.lingjuan.app.wigth;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -120,7 +121,13 @@ public class CategoryButton extends LinearLayout {
             tvTiTle.setTextColor(titleBarBackGround);
         } else {
             Image.setBackgroundResource(imageNotId);
-            tvTiTle.setTextColor(context.getResources().getColor(R.color.font_1f));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                // fallback
+                tvTiTle.setTextColor(context.getResources().getColor(R.color.font_1f));
+            } else {
+                // use your api
+                tvTiTle.setTextColor(context.getColor(R.color.font_1f));
+            }
         }
         invalidate();
 
@@ -147,7 +154,13 @@ public class CategoryButton extends LinearLayout {
         }
         this.dangqian = dangqian;
         if (position != dangqian) {
-            tvTiTle.setTextColor(context.getResources().getColor(R.color.font_1f));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                // fallback
+                tvTiTle.setTextColor(context.getResources().getColor(R.color.font_1f));
+            } else {
+                // use your api
+                tvTiTle.setTextColor(context.getColor(R.color.font_1f));
+            }
             Image.setBackgroundResource(R.mipmap.pointer0);
         } else {
             tvTiTle.setTextColor(titleBarBackGround);
@@ -170,7 +183,13 @@ public class CategoryButton extends LinearLayout {
                 Image2.setBackgroundResource(R.mipmap.didaogao);
             }
         } else {
-            tvTiTle.setTextColor(context.getResources().getColor(R.color.font_1f));
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                // fallback
+                tvTiTle.setTextColor(context.getResources().getColor(R.color.font_1f));
+            } else {
+                // use your api
+                tvTiTle.setTextColor(context.getColor(R.color.font_1f));
+            }
             Image2.setBackgroundResource(R.mipmap.weixuanzhong);
         }
         invalidate();

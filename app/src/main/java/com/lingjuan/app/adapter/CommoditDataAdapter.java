@@ -1,6 +1,7 @@
 package com.lingjuan.app.adapter;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,7 +44,14 @@ public class CommoditDataAdapter extends DelegateAdapter.Adapter<CommoditDataAda
         //设置水平方向条目的间隔
         mHelper.setHGap(10);
         mHelper.setPadding(10, 5, 10, 5);
-        mHelper.setBgColor(mContext.getResources().getColor(R.color.sbc_list_item));
+//        mHelper.setBgColor(mContext.getResources().getColor(R.color.sbc_list_item));
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            // fallback
+            mHelper.setBgColor(mContext.getResources().getColor(R.color.sbc_list_item));
+        } else {
+            // use your api
+            mHelper.setBgColor(mContext.getColor(R.color.sbc_list_item));
+        }
     }
 
 

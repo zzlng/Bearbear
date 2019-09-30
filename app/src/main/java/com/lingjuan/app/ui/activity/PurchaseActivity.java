@@ -6,9 +6,9 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.View;
 import android.webkit.SslErrorHandler;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -131,9 +131,14 @@ public class PurchaseActivity extends BaseActivity implements GradationScrollVie
         pruchasePersnter = new PruchasePersnter(this);
         ivGoodDetaiBack.setOnClickListener(this);
         webview.setWebViewClient(new WebViewClient() {
-            @Override
+            /*@Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
+                return true;
+            }*/
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                view.loadUrl(request.getUrl().toString());
                 return true;
             }
 

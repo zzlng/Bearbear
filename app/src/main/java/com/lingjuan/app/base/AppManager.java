@@ -6,21 +6,20 @@ import android.widget.Toast;
 
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
+import com.lingjuan.app.constant.Constant;
 import com.lingjuan.app.utils.AlibcTradeSDKUtils;
 import com.lingjuan.app.utils.GreenDaoUtils;
 import com.lingjuan.app.utils.LogManage;
 import com.mob.MobSDK;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.squareup.picasso.LruCache;
+import com.squareup.picasso.Picasso;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import com.lingjuan.app.constant.Constant;
-import com.squareup.picasso.LruCache;
-import com.squareup.picasso.Picasso;
-import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * 管理Applica t i o n
@@ -75,6 +74,11 @@ public class AppManager extends com.mob.MobApplication {
         CrashReport.initCrashReport(getApplicationContext(), "f75f6ba801", true);
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+//        MultiDex.install(this);
+    }
 
     public static Context getContext() {
         return context;

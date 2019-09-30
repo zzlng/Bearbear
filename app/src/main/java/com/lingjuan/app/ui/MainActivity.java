@@ -1,23 +1,15 @@
 package com.lingjuan.app.ui;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 import com.lingjuan.app.R;
 import com.lingjuan.app.base.BaseActivity;
@@ -29,14 +21,13 @@ import com.lingjuan.app.ui.fragment.HomeFragment;
 import com.lingjuan.app.ui.fragment.MyFragment;
 import com.lingjuan.app.ui.fragment.SuperClassFragment;
 import com.lingjuan.app.utils.ActivityUtils;
-import com.lingjuan.app.utils.DialogUtil;
-import com.lingjuan.app.utils.LogManage;
-import com.lingjuan.app.utils.ToastManage;
 import com.lingjuan.app.wigth.NoScrollViewPager;
 import com.orhanobut.logger.Logger;
-import com.tbruyelle.rxpermissions.RxPermissions;
 
 import org.greenrobot.eventbus.EventBus;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class MainActivity extends BaseActivity implements TabLayout.OnTabSelectedListener{
@@ -78,7 +69,7 @@ public class MainActivity extends BaseActivity implements TabLayout.OnTabSelecte
         viewpager.setAdapter(mAdapter);
         viewpager.setOffscreenPageLimit(4);
         viewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
-        tablayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewpager));
+        tablayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewpager));
         tablayout.addOnTabSelectedListener(this);
         getData();
     }

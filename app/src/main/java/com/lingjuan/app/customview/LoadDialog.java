@@ -36,8 +36,9 @@ public class LoadDialog extends Dialog {
         setContentView(R.layout.dialog_load);
         ButterKnife.bind(this);
         setCancelable(true);
-        frameAnim = (AnimationDrawable) context.getResources().getDrawable(R.drawable.ic_black);
-        iamgeAnit.setBackgroundDrawable(frameAnim);
+        frameAnim = (AnimationDrawable) context.getDrawable(R.drawable.ic_black);
+//        iamgeAnit.setBackgroundDrawable(frameAnim);
+        iamgeAnit.setBackground(frameAnim);
         frameAnim.start();
         frameAnim.clearColorFilter();
     }
