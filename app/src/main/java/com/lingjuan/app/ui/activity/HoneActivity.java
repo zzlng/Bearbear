@@ -2,8 +2,8 @@ package com.lingjuan.app.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
@@ -19,7 +19,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.lingjuan.app.R;
-import com.lingjuan.app.adapter.OneLayoutAdapter;
 import com.lingjuan.app.adapter.StaggeredGridLayoutAdapter;
 import com.lingjuan.app.base.BaseActivity;
 import com.lingjuan.app.utils.GlideImageLoader;

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.cklingjuan.ui.activity.SupersearchActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:layout_width="match_parent"
@@ -127,7 +127,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.appcompat.widget.RecyclerView
             android:id="@+id/reclcieviwe"
             android:visibility="gone"
             android:layout_width="match_parent"

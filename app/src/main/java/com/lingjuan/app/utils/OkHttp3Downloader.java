@@ -5,10 +5,9 @@ package com.lingjuan.app.utils;
  * @date: 2019/2/19
  */
 
-import android.content.Context;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
 
 import com.squareup.picasso.Downloader;
 import com.squareup.picasso.NetworkPolicy;
@@ -16,7 +15,6 @@ import com.squareup.picasso.NetworkPolicy;
 import java.io.File;
 import java.io.IOException;
 
-import butterknife.internal.Utils;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Call;

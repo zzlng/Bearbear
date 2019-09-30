@@ -16,7 +16,7 @@ import com.lingjuan.app.R;
  * Created by TaoHui on 2018/10/10.
  */
 
-public class RushRadioButton extends android.support.v7.widget.AppCompatRadioButton {
+public class RushRadioButton extends androidx.appcompat.widget.AppCompatRadioButton {
     //上文颜色
     private String uppercolor = "#FFF";
     //下文颜色

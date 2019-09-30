@@ -2,8 +2,8 @@ package com.lingjuan.app.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.GridLayoutManager;
+import androidx.appcompat.widget.RecyclerView;
 
 import com.lingjuan.app.R;
 import com.lingjuan.app.adapter.LotterytAdapter;

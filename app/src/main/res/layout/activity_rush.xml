@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_marginTop="@dimen/x20"
         android:layout_width="match_parent"
         android:layout_height="43dp"
@@ -36,7 +36,7 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- 静态加载Fragment -->
     <fragment

@@ -5,15 +5,15 @@ android {
         config {
             keyAlias 'taoyunjuan'
             keyPassword 'tao123456'
-            storeFile file('E:/814/Bearbears/app/taoyunjuan.jks')
+            storeFile file('./taoyunjuan.jks')
             storePassword 'tao123456'
         }
     }
-    compileSdkVersion 26
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.lingjuan.app"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0.7"
         multiDexEnabled false
@@ -82,6 +82,7 @@ repositories {
     jcenter()
     maven { url "https://jitpack.io" }
     maven { url "https://maven.google.com" }
+//    http://mvnrepo.alibaba-inc.com/mvn/repository
 
 }
 
@@ -93,12 +94,13 @@ greendao {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation project(":library")
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     compile 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 
     //打印日志
     compile 'com.orhanobut:logger:2.1.1'
@@ -124,9 +126,9 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
 
     //design包
-    implementation 'com.android.support:design:26.1.0'
-    implementation 'com.android.support:recyclerview-v7:26.1.0'
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
     compile('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true
     }
@@ -144,7 +146,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
 
     //轮播组件
-    compile 'com.github.Rowandjj:VerticalBannerView:1.0'
+//    compile 'com.github.Rowandjj:VerticalBannerView:1.0'
 
     //Adapter基类
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
@@ -173,6 +175,9 @@ dependencies {
     //加载动画
     compile 'com.github.gittjy:LoadingDialog:1.0.2'
     //https://github.com/gittjy/LoadingDialog
+
+
+
     //支付
     compile 'com.alibaba.alipay:alipaySingle:20160825@jar'
 
@@ -188,7 +193,7 @@ dependencies {
     compile 'com.taobao.android:mtopsdk_allinone_open:1.2.2.4@jar'
 
     //applink
-    compile 'com.alibaba.sdk.android:alibc_link_partner:1.1.0.0'
+    compile 'com.alibaba.sdk.android:alibc_link_partner:1.1.0.6'
 
     //UT
     compile 'com.taobao.android:utdid4all:1.1.5.3_proguard@jar'
@@ -198,9 +203,13 @@ dependencies {
     compile 'com.alimama.tunion.sdk:tuniontradesdk:0.3.2'
 
     //电商SDK
-    compile 'com.alibaba.sdk.android:alibc_trade_common:3.1.1.206'
-    compile 'com.alibaba.sdk.android:alibc_trade_biz:3.1.1.206'
-    compile 'com.alibaba.sdk.android:alibc_trade_sdk:3.1.1.206'
+    compile 'com.alibaba.sdk.android:alibc_trade_common:3.1.1.210'
+    compile 'com.alibaba.sdk.android:alibc_trade_biz:3.1.1.210'
+    compile 'com.alibaba.sdk.android:alibc_trade_sdk:3.1.1.210'
+
+
+
+
     implementation 'co.trikita:anvil-cardview-v7:0.5.2'
     //刷新
     implementation 'com.yanzhenjie.recyclerview:support:1.3.0'

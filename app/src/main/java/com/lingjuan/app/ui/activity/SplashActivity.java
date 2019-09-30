@@ -7,29 +7,21 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.widget.LinearLayout;
 
 import com.lingjuan.app.R;
 import com.lingjuan.app.base.BaseActivity;
 import com.lingjuan.app.customview.TasksCompletedView;
-import com.lingjuan.app.entity.FootprintRzy;
-import com.lingjuan.app.greendao.FootprintRzyDao;
-import com.lingjuan.app.ui.MainActivity;
-import com.lingjuan.app.utils.DialogUtil;
-import com.lingjuan.app.utils.GreenDaoUtils;
 import com.lingjuan.app.utils.LogManage;
 import com.lingjuan.app.utils.ToastManage;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import rx.functions.Action1;
 
 /**
  * @author: TaoHui

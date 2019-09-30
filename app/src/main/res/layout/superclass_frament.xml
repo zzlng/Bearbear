@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:background="@color/error_color_material_dark"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:textColor="@color/white"
             android:textStyle="normal" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
 
     <LinearLayout
@@ -30,13 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.appcompat.widget.RecyclerView
             android:id="@+id/classify_left"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent"/>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.appcompat.widget.RecyclerView
             android:id="@+id/classify_right"
             android:layout_width="0dp"
             android:layout_weight="8"

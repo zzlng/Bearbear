@@ -7,7 +7,7 @@
     tools:context="com.cklingjuan.ui.activity.PhoneLoginActivity">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/baseviwes"
         android:layout_width="match_parent"
         android:layout_height="53dp"
@@ -30,7 +30,7 @@
             android:textSize="17sp"
             android:textStyle="normal" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout android:orientation="vertical"
 
         android:layout_margin="@dimen/x14"
