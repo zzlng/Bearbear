@@ -1,20 +1,20 @@
 package com.lingjuan.app.adapter;
 
 import android.content.Context;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
-import com.taobao.library.VerticalBannerView;
-
-import java.util.List;
-
 import com.lingjuan.app.R;
 import com.lingjuan.app.constant.Constant;
 import com.lingjuan.app.customview.DataHashMap;
+import com.taobao.library.VerticalBannerView;
+
+import java.util.List;
 
 /**
  * Created by OneX on 2018/1/2:11:21.

@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
@@ -16,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.jaeger.library.StatusBarUtil;
 import com.lingjuan.app.R;

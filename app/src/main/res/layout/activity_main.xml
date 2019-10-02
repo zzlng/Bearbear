@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cklingjuan.ui.MainActivity">
+    tools:context="com.lingjuan.app.ui.MainActivity">
     <com.lingjuan.app.wigth.NoScrollViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"

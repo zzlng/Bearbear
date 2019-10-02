@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+
 import android.view.KeyEvent;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -38,13 +40,7 @@ public class DrawActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            // fallback
-            StatusBarUtil.setTranslucentForImageView(this, getResources().getColor(R.color.error_color_material_dark), null);
-        } else {
-            // use your api
-            StatusBarUtil.setTranslucentForImageView(this, getColor(R.color.error_color_material_dark), null);
-        }
+        StatusBarUtil.setTranslucentForImageView(this, ContextCompat.getColor(this, R.color.error_color_material_dark), null);
         setContentView(R.layout.activity_draw);
         ButterKnife.bind(this);
         initView();

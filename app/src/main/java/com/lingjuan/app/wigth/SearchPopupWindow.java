@@ -4,8 +4,10 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -124,22 +126,10 @@ public class SearchPopupWindow extends PopupWindow {
             helper.addOnClickListener(R.id.baselayouts);
             if (item.isaBoolean()) {
                 helper.setVisible(R.id.imageHong, true);
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                    // fallback
-                    helper.setTextColor(R.id.tv_title, context.getResources().getColor(R.color.hongdui));
-                } else {
-                    // use your api
-                    helper.setTextColor(R.id.tv_title, context.getColor(R.color.hongdui));
-                }
+                helper.setTextColor(R.id.tv_title, ContextCompat.getColor(context, R.color.hongdui));
             } else {
                 helper.setVisible(R.id.imageHong, false);
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                    // fallback
-                    helper.setTextColor(R.id.tv_title, context.getResources().getColor(R.color.font_1f));
-                } else {
-                    // use your api
-                    helper.setTextColor(R.id.tv_title, context.getColor(R.color.font_1f));
-                }
+                helper.setTextColor(R.id.tv_title, ContextCompat.getColor(context, R.color.font_1f));
             }
         }
     }

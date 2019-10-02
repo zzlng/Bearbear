@@ -12,6 +12,8 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
+import androidx.core.content.ContextCompat;
+
 import com.lingjuan.app.R;
 
 /**
@@ -80,13 +82,8 @@ public class CouponDisplayView extends RelativeLayout{
         }
         mPaint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint2.setDither(true);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            // fallback
-            mPaint2.setColor(getResources().getColor(R.color.divider_color_car));
-        } else {
-            // use your api
-            mPaint2.setColor(getContext().getColor(R.color.divider_color_car));
-        }
+        mPaint2.setColor(ContextCompat.getColor(getContext(), R.color.divider_color_car));
+        mPaint2.setColor(ContextCompat.getColor(getContext(), R.color.divider_color_car));
         mPaint2.setStyle(Paint.Style.FILL);
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);

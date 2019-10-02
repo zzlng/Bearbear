@@ -1,12 +1,17 @@
 package com.lingjuan.app.ui.fragment;
 
-import android.support.design.widget.TabLayout;
+import android.view.View;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.widget.Toolbar;
-import android.view.View;
+
+import com.google.android.material.tabs.TabLayout;
+import com.lingjuan.app.R;
+import com.lingjuan.app.base.BaseFragment;
+import com.lingjuan.app.utils.DateUtils;
+import com.lingjuan.app.utils.LogManage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +19,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
-import com.lingjuan.app.R;
-import com.lingjuan.app.base.BaseFragment;
-import com.lingjuan.app.utils.DateUtils;
-import com.lingjuan.app.utils.LogManage;
 
 /**
  * 抢购

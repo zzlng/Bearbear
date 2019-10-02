@@ -1,9 +1,10 @@
 package com.lingjuan.app.ui.fragment;
 
 import android.os.Bundle;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;

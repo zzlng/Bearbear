@@ -13,7 +13,8 @@ import java.util.List;
  * Date: 16/1/6<br/>
  * Time: 下午4:59<br/>
  */
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
+@SuppressWarnings("unchecked")
 public abstract class BaseBannerAdapter<T> {
     private List<T> mDatas;
     private OnDataChangedListener mOnDataChangedListener;

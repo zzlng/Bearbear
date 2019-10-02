@@ -27,4 +27,6 @@
     <string name="sousou_xiaolinag">销量</string>
     <string name="sousou_jiage">价格</string>
     <string name="sousou_shaixuan">过滤</string>
+
+    <item name="webviewload_monitor_cancel_point" type="id"/>
 </resources>

@@ -9,6 +9,7 @@ import com.lingjuan.app.utils.LogManage;
  * Created by TaoHui on 2018/10/9.
  */
 
+@SuppressWarnings("unchecked")
 public class RushPersnter implements RushInterface.iView<Rusheeny> {
     private RushInterface.Pview pview;
     private RushModule rushModule;

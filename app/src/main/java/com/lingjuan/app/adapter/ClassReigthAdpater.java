@@ -2,8 +2,9 @@ package com.lingjuan.app.adapter;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.GridLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

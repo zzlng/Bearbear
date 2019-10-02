@@ -1,12 +1,9 @@
 package com.lingjuan.app.ui.fragment;
 
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lingjuan.app.R;
@@ -14,8 +11,8 @@ import com.lingjuan.app.adapter.RushSigAdapter;
 import com.lingjuan.app.base.BaseFragment;
 import com.lingjuan.app.constant.Constant;
 import com.lingjuan.app.entity.Rusheeny;
-import com.lingjuan.app.mvp.rush.view.RushInterface;
 import com.lingjuan.app.mvp.rush.persenter.RushPersnter;
+import com.lingjuan.app.mvp.rush.view.RushInterface;
 import com.lingjuan.app.ui.activity.PurchaseActivity;
 import com.lingjuan.app.utils.ActivityUtils;
 import com.lingjuan.app.utils.LogManage;
@@ -23,6 +20,10 @@ import com.lingjuan.app.utils.ToastManage;
 import com.lingjuan.app.utils.purchase.PurchaseUtils;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 抢购子页面

@@ -2,7 +2,6 @@ package com.lingjuan.app.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.tabs.TabLayout;
 import com.lingjuan.app.R;
 import com.lingjuan.app.base.BaseActivity;
 import com.lingjuan.app.entity.EventBusRzy;

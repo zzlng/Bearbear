@@ -10,6 +10,7 @@ import rx.Subscriber;
  * Created by TaoHui on 2018/10/9.
  */
 
+@SuppressWarnings("unchecked")
 public class RushModule implements RushInterface.Dview {
     private RushInterface.iView iView;
 

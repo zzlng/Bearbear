@@ -104,7 +104,7 @@ public class ActivityUtils {
             return false;
         }
         try {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            /*if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
                 // fallback
                 ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
                         PackageManager.GET_UNINSTALLED_PACKAGES);
@@ -112,7 +112,9 @@ public class ActivityUtils {
                 // use your api
                 ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
                         PackageManager.MATCH_UNINSTALLED_PACKAGES);
-            }
+            }*/
+            ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
+                    PackageManager.MATCH_UNINSTALLED_PACKAGES);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;

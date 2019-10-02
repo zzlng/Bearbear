@@ -3,8 +3,10 @@ package com.lingjuan.app.ui.activity;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.appcompat.widget.GridLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -151,25 +153,15 @@ public class FunctionalCommodityActivity extends BaseActivity implements Functio
             case R.id.title_view:
                 break;
             case R.id.tv_zonghe:
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                    tvZonghe.setTextColor(getResources().getColor(R.color.color_sososu_red));
-                    tvXiaoliang.setTextColor(getResources().getColor(R.color.bg_fgs));
-                } else {
-                    tvZonghe.setTextColor(getColor(R.color.color_sososu_red));
-                    tvXiaoliang.setTextColor(getColor(R.color.bg_fgs));
-                }
+                tvZonghe.setTextColor(ContextCompat.getColor(this, R.color.color_sososu_red));
+                tvXiaoliang.setTextColor(ContextCompat.getColor(this, R.color.bg_fgs));
                 mid = 1;
                 sort = 1;
                 getData();
                 break;
             case R.id.tv_xiaoliang:
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                    tvXiaoliang.setTextColor(getResources().getColor(R.color.color_sososu_red));
-                    tvZonghe.setTextColor(getResources().getColor(R.color.bg_fgs));
-                } else {
-                    tvXiaoliang.setTextColor(getColor(R.color.color_sososu_red));
-                    tvZonghe.setTextColor(getColor(R.color.bg_fgs));
-                }
+                tvXiaoliang.setTextColor(ContextCompat.getColor(this, R.color.color_sososu_red));
+                tvZonghe.setTextColor(ContextCompat.getColor(this, R.color.bg_fgs));
                 mid = 1;
                 sort = 3;
                 getData();

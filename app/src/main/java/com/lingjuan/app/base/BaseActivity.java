@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.os.Bundle;
 
 import com.android.tu.loadingdialog.LoadingDailog;
@@ -26,13 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayout());
         ButterKnife.bind(this);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            // fallback
-            StatusBarUtil.setTranslucentForImageView(this, getResources().getColor(R.color.colorPrimary),null);
-        } else {
-            // use your api
-            StatusBarUtil.setTranslucentForImageView(this, getColor(R.color.colorPrimary),null);
-        }
+        StatusBarUtil.setTranslucentForImageView(this, ContextCompat.getColor(this, R.color.colorPrimary),null);
         loadBuilder=new LoadingDailog.Builder(this)
                 .setCancelable(false)
                 .setMessage("加载中...")

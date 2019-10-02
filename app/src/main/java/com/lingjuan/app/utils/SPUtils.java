@@ -18,6 +18,7 @@ import java.util.Set;
  *Created by TaoHui on 2018/8/1.
  *     共享参数存储工具类
  */
+@SuppressWarnings("unchecked")
 public final class SPUtils {
 
     private static SimpleArrayMap SP_UTILS_MAP = new SimpleArrayMap<>();

@@ -7,6 +7,7 @@ import android.content.Intent;
  * Created by TaoHui on 2018/10/25.
  */
 
+@SuppressWarnings("unchecked")
 public class IntentUtils<T> {
     private static IntentUtils intentUtils;
 

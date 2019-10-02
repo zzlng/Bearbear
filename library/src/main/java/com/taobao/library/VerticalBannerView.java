@@ -23,7 +23,8 @@ import android.widget.LinearLayout;
  * Date: 16/1/6<br/>
  * Time: 下午4:50<br/>
  */
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
+@SuppressWarnings("unchecked")
 public class VerticalBannerView extends LinearLayout implements BaseBannerAdapter.OnDataChangedListener {
 
     private float mBannerHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,40,getResources().getDisplayMetrics());

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
+
 import com.jaeger.library.StatusBarUtil;
 import com.lingjuan.app.R;
 import com.lingjuan.app.base.BaseActivity;
@@ -17,11 +19,7 @@ public class RushActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            StatusBarUtil.setColorNoTranslucent(this, getResources().getColor(R.color.error_color_material_dark));
-        } else {
-            StatusBarUtil.setColorNoTranslucent(this, getColor(R.color.error_color_material_dark));
-        }
+        StatusBarUtil.setColorNoTranslucent(this, ContextCompat.getColor(this, R.color.error_color_material_dark));
     }
 
     @Override

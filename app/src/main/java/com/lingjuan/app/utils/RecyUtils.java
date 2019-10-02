@@ -1,8 +1,9 @@
 package com.lingjuan.app.utils;
 
 import android.content.Context;
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @author: TaoHui

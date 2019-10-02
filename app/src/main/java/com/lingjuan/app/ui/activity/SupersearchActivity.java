@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.appcompat.widget.LinearLayoutManager;
-import androidx.appcompat.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -16,6 +14,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lingjuan.app.R;
 import com.lingjuan.app.adapter.HotKeyAdapter;
@@ -45,6 +47,7 @@ import butterknife.OnClick;
  * 超级搜索
  * Created by TaoHui on 2018/10/17.
  */
+@SuppressWarnings("unchecked")
 public class SupersearchActivity extends BaseActivity implements IhotKey.P {
 
     @BindView(R.id.tvSearch)
@@ -163,13 +166,7 @@ public class SupersearchActivity extends BaseActivity implements IhotKey.P {
             tv.setText(dataBean.get(i).getKeyword());
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             tv.setPadding(30, 10, 30, 10);
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                // fallback
-                tv.setBackground(getResources().getDrawable(R.drawable.shape_corner));
-            } else {
-                // use your api
-                tv.setBackground(getDrawable(R.drawable.shape_corner));
-            }
+            tv.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_corner));
             GradientDrawable gradientDrawable = (GradientDrawable) tv.getBackground();
             gradientDrawable.setColor(Color.parseColor(ColorUtil.statisticsColors[i]));
             tv.setOnClickListener(v -> {
@@ -200,15 +197,8 @@ public class SupersearchActivity extends BaseActivity implements IhotKey.P {
             tv.setText(historyRzyList.get(i).getMessage());
             tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
             tv.setPadding(30, 10, 30, 10);
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-                // fallback
-                tv.setBackground(getResources().getDrawable(R.drawable.shape_corner));
-                tv.setTextColor(getResources().getColor(R.color.bgColor_overlay));
-            } else {
-                // use your api
-                tv.setBackground(getDrawable(R.drawable.shape_corner));
-                tv.setTextColor(getColor(R.color.bgColor_overlay));
-            }
+            tv.setBackground(ContextCompat.getDrawable(this, R.drawable.shape_corner));
+            tv.setTextColor(ContextCompat.getColor(this, R.color.bgColor_overlay));
             tv.setOnClickListener(v -> {
                 if (QueryHistoryUtils.isExistence(tv.getText().toString())) {
                     HistoryRzy historyRzy = new HistoryRzy();

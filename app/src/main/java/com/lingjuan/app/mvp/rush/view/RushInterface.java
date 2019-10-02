@@ -6,6 +6,7 @@ import com.lingjuan.app.mvp.base.BaseViw;
  * Created by TaoHui on 2018/10/9.
  */
 
+//@SuppressWarnings("unchecked")
 public interface RushInterface {
 
      interface iView<T>{
@@ -17,7 +18,6 @@ public interface RushInterface {
         void RushCallback(T t);
         void RushError(String s);
     }
-
 
     interface Dview{
         void getQequestData(String hour_type,int min_id);

@@ -2,14 +2,16 @@ package com.lingjuan.app.adapter;
 
 import android.content.Context;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
@@ -45,13 +47,7 @@ public class CommoditDataAdapter extends DelegateAdapter.Adapter<CommoditDataAda
         mHelper.setHGap(10);
         mHelper.setPadding(10, 5, 10, 5);
 //        mHelper.setBgColor(mContext.getResources().getColor(R.color.sbc_list_item));
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            // fallback
-            mHelper.setBgColor(mContext.getResources().getColor(R.color.sbc_list_item));
-        } else {
-            // use your api
-            mHelper.setBgColor(mContext.getColor(R.color.sbc_list_item));
-        }
+        mHelper.setBgColor(ContextCompat.getColor(mContext, R.color.sbc_list_item));
     }
 
 
