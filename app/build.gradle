@@ -162,8 +162,9 @@ dependencies {
     //热搜
     implementation 'com.nex3z:flow-layout:1.2.4'
     //https://github.com/nex3z/FlowLayout
-    //首页推举
+    //首页推举 TODO
     implementation 'com.chenlittleping:recyclercoverflow:1.0.6'
+//    https://github.com/ChenLittlePing/RecyclerCoverFlow
 
     //优惠券
     implementation 'com.ramotion.cardslider:card-slider:0.1.0'
