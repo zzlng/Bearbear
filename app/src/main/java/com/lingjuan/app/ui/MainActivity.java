@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity implements TabLayout.OnTabSelecte
     @Override
     protected void initView() {
         setTaybar();
-        mAdapter = new MyViewPagerAdapter(getSupportFragmentManager());
+        mAdapter = new MyViewPagerAdapter(getSupportFragmentManager(), 1);
         viewpager.setAdapter(mAdapter);
         viewpager.setOffscreenPageLimit(4);
         viewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tablayout));
@@ -127,8 +127,8 @@ public class MainActivity extends BaseActivity implements TabLayout.OnTabSelecte
 
     private class MyViewPagerAdapter extends FragmentPagerAdapter {
 
-        public MyViewPagerAdapter(FragmentManager fm) {
-            super(fm);
+        public MyViewPagerAdapter(FragmentManager fm, int b) {
+            super(fm, b);
         }
 
         @Override

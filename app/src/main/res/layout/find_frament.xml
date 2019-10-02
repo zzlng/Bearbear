@@ -108,13 +108,13 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh_layout"
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.yanzhenjie.recyclerview.SwipeRecyclerView
             android:padding="@dimen/y4"
             android:id="@+id/recyclview"
+            android:layout_below="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

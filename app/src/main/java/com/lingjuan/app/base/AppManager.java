@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.Toast;
 
+import androidx.multidex.MultiDex;
+
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
 import com.lingjuan.app.constant.Constant;
@@ -77,7 +79,7 @@ public class AppManager extends com.mob.MobApplication {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-//        MultiDex.install(this);
+        MultiDex.install(this);
     }
 
     public static Context getContext() {

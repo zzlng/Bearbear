@@ -30,13 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/classify_left"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent"/>
 
-        <androidx.appcompat.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/classify_right"
             android:layout_width="0dp"
             android:layout_weight="8"

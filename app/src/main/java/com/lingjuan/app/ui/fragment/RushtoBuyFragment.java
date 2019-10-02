@@ -60,7 +60,7 @@ public class RushtoBuyFragment extends BaseFragment {
         for (int s : ints) {
             mFagments.add(SideFragment.getInstance(String.valueOf(s)));
         }
-        adapter = new MyPagerAdapter(getChildFragmentManager());
+        adapter = new MyPagerAdapter(getChildFragmentManager(), 1);
         viiewpager.setAdapter(adapter);
         viiewpager.setCurrentItem(count,false);
         tablayout.setupWithViewPager(viiewpager);
@@ -89,8 +89,8 @@ public class RushtoBuyFragment extends BaseFragment {
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
+        public MyPagerAdapter(FragmentManager fm, int b) {
+            super(fm, b);
         }
 
         @Override

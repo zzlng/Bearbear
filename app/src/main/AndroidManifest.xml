@@ -63,7 +63,7 @@
 
         <activity android:name=".ui.activity.FootprintActivity" />
 
-        <provider
+        <!--<provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.lingjuan.app.fileProvider"
             android:exported="false"
@@ -71,7 +71,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider>
+        </provider>-->
 
         <activity android:name=".ui.activity.EverydayGoodActivity" />
 
